@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Methods</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>OBJECT METHOD TRACKER</h1>
+
+    <!-- Keys Method -->
+    <div class="container">
+        <h2>Object Keys Display</h2>
+        <p>Click the button to display the keys of the object:</p>
+        <button onclick="showObjectKeys()">Show Keys</button>
+        <button class="reset-button" onclick="resetKeys()">Reset</button>
+
+    
+        <ul id="keysList"></ul>
+      </div>
+
+
+      <!-- Values Method -->
+      <div class="container">
+        <h2>Object Values Display</h2>
+        <p>Click the button to display the values of the object:</p>
+        <button onclick="showObjectValues()">Show Values</button>
+        <button class="reset-button" onclick="resetValues()">Reset</button>
+
+    
+        <ul id="ValuesList"></ul>
+      </div>
+
+
+      <!-- Entries Method -->
+      <div class="container">
+        <h2>Object Entries Display</h2>
+        <p>Click the button to display the entries of the object:</p>
+        <button onclick="showObjectEntries()">Show Entries</button>
+        <button class="reset-button" onclick="resetEntries()">Reset</button>
+
+    
+        <ul id="EntriesList"></ul>
+      </div>
+
+      <!-- Assign object method -->
+      <div class="container">
+        <h2>Object Assign method Display</h2>
+        <p>Click the button to display the assigning object properties:</p>
+        <button onclick="showAssignObject()">Show Assign</button>
+        <button class="reset-button" onclick="resetAssign()">Reset</button>
+
+    
+        <ul id="AssignList"></ul>
+        <p class="description"></p>
+      </div>
+
+      <!-- hasOwnProperty object Method -->
+
+      <div class="container">
+        <h2>Object hasOwnProperty method Display</h2>
+        <p>Click the button to display the hasOwnProperty object properties:</p>
+        <button onclick="checkProperty()">Show Property</button>
+        <button class="reset-button" onclick="reset()">Reset</button>
+
+    
+        <ul id="verificationList"></ul>
+        <p class="description"></p>
+      </div>
+
+      <!-- freez method -->
+
+      <div class="container">
+        <h2>Object Freeze method Display</h2>
+        <p>Click the button to display freeze object properties:</p>
+        <button onclick="checkFreezProperty()">Show Property</button>
+        <button class="reset-button" onclick="resetFreez()">Reset</button>
+
+    
+        <ul id="freezList"></ul>
+        <p class="description"></p>
+    <p class="error-message"></p> 
+  </div>
+
+  <!-- Seal method -->
+
+  <div class="container">
+    <h2>Object Seal Method Display</h2>
+    <p>Click the button to display the sealed object's properties:</p>
+    <button onclick="checkSealProperty()">Show Property</button>
+    <button class="reset-button" onclick="resetSeal()">Reset</button>
+
+    <ul id="sealList"></ul>
+    <p class="description"></p>
+    <p class="error-message"></p>  
+  </div>
+
+  <!-- Object.defineProperty -->
+
+      <div class="container">
+    <h2>Object defineProperty() Method Display</h2>
+    <p>Click the button to display the  defineProperty() of object</p>
+    <button onclick="createDefineProperty()">Show Property</button>
+    <button class="reset-button" onclick="resetCreate()">Reset</button>
+
+    <ul id="defineList"></ul>
+    <p class="description"></p>
+  </div>
+
+
+  <!-- definGetter method -->
+
+  <div class="container">
+    <h2>Object defineGetter() Method Display</h2>
+    <p>Click the button to display the defineGetter() of object</p>
+    <button onclick="defineGetterProperty()">Show Property</button>
+    <button class="reset-button" onclick="resetGetterProperty()">Reset</button>
+
+    <ul id="defineGetterList"></ul>
+    <p class="description"></p>
+  </div>
+
+  <!-- DefineSetter() Method -->
+  <div class="container">
+    <h2>Object defineSetter() Method Display</h2>
+    <p>Click the button to display the defineSetter() of object</p>
+    <button onclick="showDefineSetter()">Show Property</button>
+    <button class="reset-button" onclick="resetSetterProperty()">Reset</button>
+
+    <ul id="defineSetterList"></ul>
+    <p class="description"></p>
+  </div>
+
+
+
+
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
