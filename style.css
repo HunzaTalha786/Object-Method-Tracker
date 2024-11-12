@@ -22,6 +22,14 @@ body {
     margin-top: 2rem;
     
   }
+  input{
+    text-align: center;
+    color: #45a049;
+    margin-bottom: 1rem;
+    padding: 0.3rem;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+  }
   h2 {
     color:#333;
   }

@@ -1,12 +1,24 @@
 // Object prototypes
     
     // KEY METHOD OF OBJECT
-    const keyObject = {
-        name: "Tehreem",
-        age: 25,
-        occupation: "Engineer",
-        country: "USA"
-      };
+function showObject(){
+  const name = document.getElementById("name").value;
+  const age = document.getElementById("age").value;
+  const occupation = document.getElementById("occupation").value;
+  const country = document.getElementById("country").value;
+
+  return{
+    Name:name,
+    Age:age,
+    Occupation:occupation,
+    Country:country
+
+  };
+
+}
+
+    const keyObject =showObject()
+        
   
       function showObjectKeys() {
         const keys = Object.keys(keyObject);
@@ -24,19 +36,32 @@
     function resetKeys() {
         const listElement = document.getElementById("keysList");
         listElement.innerHTML = ""; 
+        document.getElementById("name").value="";
+        document.getElementById("age").value=""; 
+        document.getElementById("occupation").value="";
+        document.getElementById("country").value="";
       }
 
 
       // VALUES METHOD
-      const valueObject ={
-        
-        name: "Tehreem",
-        age: 25,
-        occupation: "Engineer",
-        country: "USA"
-        
+
+      function showObjects(){
+        const name = document.getElementById("name-value").value;
+        const age = document.getElementById("age-value").value;
+        const occupation = document.getElementById("occupation-value").value;
+        const country = document.getElementById("country-value").value;
+      
+        return{
+          Name:name,
+          Age:age,
+          Occupation:occupation,
+          Country:country
+      
+        };
+      
       }
       function showObjectValues(){
+        const valueObject = showObjects(); 
         const values = Object.values(valueObject);
         const valueList = document.getElementById('ValuesList');
         valueList.innerHTML = "";
@@ -51,28 +76,39 @@
       }
       function resetValues() {
         const valueList = document.getElementById("ValuesList");
-        valueList.innerHTML = "";  
+        valueList.innerHTML = ""; 
+        document.getElementById("name-value").value="";
+        document.getElementById("age-value").value=""; 
+        document.getElementById("occupation-value").value="";
+        document.getElementById("country-value").value="";
       }
 
       //Entries Method
 
-      const entriesObject ={
-        
-        name: "Tehreem",
-        age: 25,
-        occupation: "Engineer",
-        country: "USA"
-        
+      function showEntries(){
+        const name = document.getElementById("name-entries").value;
+        const age = document.getElementById("age-entries").value;
+        const occupation = document.getElementById("occupation-entries").value;
+        const country = document.getElementById("country-entries").value;
+      
+        return{
+          Name:name,
+          Age:age,
+          Occupation:occupation,
+          Country:country
+      
+        };
       }
-
       function showObjectEntries(){
+        const entriesObject =showEntries();
+
         const entries =Object.entries(entriesObject);
         const entriesList = document.getElementById('EntriesList');
         entriesList.innerHTML="";
 
-        entries.forEach(entries =>{
+        entries.forEach( ([key,values])=>{
           const entriesItem =document.createElement('li');
-          entriesItem.textContent=entries;
+          entriesItem.textContent=`${key} : ${values}`;
           entriesList.appendChild(entriesItem);
         });
 
@@ -82,30 +118,44 @@
         const entriesList = document.getElementById('EntriesList');
         entriesList.innerHTML="";
 
+        document.getElementById("name-entries").value="";
+        document.getElementById("age-entries").value=""; 
+        document.getElementById("occupation-entries").value="";
+        document.getElementById("country-entries").value="";
+
       }
 
       //Assign method
-
-      const object1 = {
-        name: "Tehreem",
-        age: 25,
-        occupation: "Engineer",
-        country: "USA"
+      function showAssign(){
+        const name = document.getElementById("name-assign").value;
+        const age = document.getElementById("age-assign").value;
+        const occupation = document.getElementById("occupation-assign").value;
+        const country = document.getElementById("country-assign").value;
+      
+        return{
+          Name:name,
+          Age:age,
+          Occupation:occupation,
+          Country:country
+      
+        };
       }
-
-      const object2 ={
-
-        name: "Hira",
-        age:"30",
-        occupation: "Teacher",
-        Subject:'Science',
-        campus:'Garden',
-        country:'USA'
-
+function showAssign2(){
+      const name2 = document.getElementById("name-assign1").value;
+        const age2 = document.getElementById("age-assign1").value;
+        const religion = document.getElementById("religion-assign1").value;
+      
+        return{
+          Name:name2,
+          Age:age2,
+          Religion:religion
+          
+      
+        };
       }
 
       function showAssignObject(){
-        const student = Object.assign({},object1 , object2);
+        const student = Object.assign({},showAssign(),showAssign2());
         const assignList = document.getElementById('AssignList');
         assignList.innerHTML="";
 
@@ -129,32 +179,48 @@
 
   const assignList = document.getElementById('AssignList');
   assignList.innerHTML="";
-
-
+  document.getElementById("name-assign1").value = "";
+   document.getElementById("age-assign1").value = "";
+   document.getElementById("religion-assign1").value = "";
+   document.getElementById("name-assign").value = "";
+  document.getElementById("age-assign").value = "";
+   document.getElementById("occupation-assign").value = "";
+   document.getElementById("country-assign").value = "";
 
       }
       
       // hasOwnProperty object Method
 
-      const person ={
-
-        name: "Hira",
-        age:"30",
-        occupation: "Teacher",
-        Subject:'Science',
-        campus:'Garden',
-        country:'USA'
-
+      function hasOwnPropertyKey(){
+        const name = document.getElementById("name-hasOwn").value;
+        const age = document.getElementById("age-hasOwn").value;
+        const occupation = document.getElementById("occupation-hasOwn").value;
+        const country = document.getElementById("country-hasOwn").value;
+      
+        return{
+          name:name,
+          age:age,
+          occupation:occupation,
+          country:country
+      
+        };
       }
+      function checkKey(){
+        return document.getElementById("keyName").value.trim();
+      }
+
 
       function checkProperty(){
 
-        const verification = person.hasOwnProperty('occupation');
+        const key = checkKey().toLowerCase(); 
+        const object = hasOwnPropertyKey();
+
+        const verification = object.hasOwnProperty(key);
         const personVerification =document.getElementById('verificationList');
         personVerification.innerHTML="";
 
         const result = document.createElement('li');
-        result.textContent= `Has 'occupation' property: ${verification}`;
+        result.textContent= `Has '${key}' property: ${verification}`;
         personVerification.appendChild(result);
 
         const des =document.getElementsByClassName('description')[1];
@@ -170,47 +236,81 @@
         const des =document.getElementsByClassName('description')[1];
         des.innerHTML="";
 
+        document.getElementById("age-hasOwn").value = "";
+        document.getElementById("name-hasOwn").value = "";
+        document.getElementById("occupation-hasOwn").value = "";
+       document.getElementById("country-hasOwn").value = "";
+       document.getElementById("keyName").value="";
+
       }
 
 
       // freez method
-
-      const freezObject1 ={
-        name: "Tehreem",
-        age: 25,
-        occupation: "Engineer",
-        country: "USA"
+      function checkFreeze(){
+        const name = document.getElementById("name-freeze").value;
+        const age = document.getElementById("age-freeze").value;
+        const occupation = document.getElementById("occupation-freeze").value;
+        const country = document.getElementById("country-freeze").value;
+      
+        return{
+          name:name,
+          age:age,
+          occupation:occupation,
+          country:country
+      
+        };
       }
 
-      const freezObject2={
-        name: "Hira",
-        age:"30",
-        occupation: "Teacher",
-        Subject:'Science',
-        campus:'Garden',
-        country:'USA'
+      function checkFreeze2(){
+        const name = document.getElementById("name-freeze1").value;
+        const age = document.getElementById("age-freeze1").value;
+        const occupation = document.getElementById("occupation-freeze1").value;
+        const country = document.getElementById("country-freeze1").value;
+      
+        return{
+          name:name,
+          age:age,
+          occupation:occupation,
+          country:country
+      
+        };
 
       }
+        
+    
 
       function checkFreezProperty(){
+        const freeze = checkFreeze();
 
-        const freez = Object.freeze(freezObject1);
+        const freez = Object.freeze(freeze);
         const freezList = document.getElementById('freezList')
         freezList.innerHTML="";
 
-        for (let [key, value] of Object.entries(freezObject1)) {
+        for (let [key, value] of Object.entries(freeze)) {
         const freezItems =document.createElement('li');
         freezItems.textContent=`${key}: ${value}`;
         freezList.appendChild(freezItems);
         // freezList.innerHTML += `<li>${key}: ${value}</li>`;
         }
   
-       
-        freezObject1.name = "Hunza";
+        const freeze2 =checkFreeze2();
+
         const errorMessage = document.getElementsByClassName('error-message')[0];
-        errorMessage.textContent = "You cannot modify a frozen object.";
 
 
+        try {
+          // Attempt to change the frozen object (this should fail silently)
+          freez.name = freeze2.name;
+          freez.age = freeze2.age;
+          freez.occupation = freeze2.occupation;
+          freez.country = freeze2.country;
+          errorMessage.textContent = `You tried to modify the frozen object, but it remains unchanged. `
+        }
+
+          catch{
+            errorMessage.textContent = "You cannot modify a frozen object.";
+
+          }
           const description =document.getElementsByClassName('description')[2];
           description.innerHTML=`In JavaScript, Object.freeze() is used to freeze an object, preventing any modifications to it. When an object is frozen, its properties cannot be added, removed, or changed (including their values). This can be useful when you want to create a "constant" object that cannot be accidentally altered in your code.`
       }
@@ -226,46 +326,89 @@
 
         const errorMessage = document.getElementsByClassName('error-message')[0];
         errorMessage.textContent = "";
+
+
+         document.getElementById("name-freeze").value = "";
+        document.getElementById("age-freeze").value = "";
+        document.getElementById("occupation-freeze").value = "";
+        document.getElementById("country-freeze").value = "";
+
+        document.getElementById("name-freeze1").value = "";
+        document.getElementById("age-freeze1").value = "";
+        document.getElementById("occupation-freeze1").value = "";
+        document.getElementById("country-freeze1").value = "";
+
+
+      
       }
 
       // seal method
 
-      const sealObject1 = {
-        name: "Tehreem",
-        age: 25,
-        occupation: "Engineer",
-        country: "USA"
-      };
-  
-      function checkSealProperty() {
-        Object.seal(sealObject1);
+      function checkSeal(){
+        const name = document.getElementById("name-seal").value;
+        const age = document.getElementById("age-seal").value;
+        const occupation = document.getElementById("occupation-seal").value;
+        const country = document.getElementById("country-seal").value;
+      
+        return{
+          name:name,
+          age:age,
+          occupation:occupation,
+          country:country
+      
+        };
+      }
+
+      function checkSeal2(){
+        const name = document.getElementById("name-seal-1").value;
+        const age = document.getElementById("age-seal-1").value;
+        const occupation = document.getElementById("occupation-seal-1").value;
+        const country = document.getElementById("country-seal-1").value;
+      
+        return{
+          name:name,
+          age:age,
+          occupation:occupation,
+          country:country
+      
+        };
+
+      }
+
+      function renderSealList(seal) {
         const sealList = document.getElementById('sealList');
-        sealList.innerHTML = ""; 
-
-
-        for (let [key, value] of Object.entries(sealObject1)) {
-          const sealItem = document.createElement('li');
-          sealItem.textContent=`${key} :${value}`;
-          sealList.appendChild(sealItem);
+        sealList.innerHTML = "";
+    
+        // Render the updated properties of the sealed object
+        for (let [key, value] of Object.entries(seal)) {
+            const sealItem = document.createElement('li');
+            sealItem.textContent = `${key}: ${value}`;
+            sealList.appendChild(sealItem);
         }
+    }
+      function checkSealProperty() {
+        const seal = checkSeal()
+        Object.seal(seal);
+        
+        // Render the sealed object in the list
+        renderSealList(seal);
   
         // This will succeed because Object.seal() allows modifications
-        sealObject1.name = "Hunza"; 
+        const seal2 =checkSeal2();
 
-        sealList.innerHTML = "";  
-       for (let [key, value] of Object.entries(sealObject1)) {
-       const sealItem = document.createElement('li');
-        sealItem.textContent = `${key}: ${value}`;
-        sealList.appendChild(sealItem);
-  }
-
-  
-      // This will fail because Object.seal() prevents deletion
-        delete sealObject1.country; 
-        sealObject1.newProperty = "London";
         const errorMessage = document.getElementsByClassName('error-message')[1];
-        errorMessage.textContent = "You cannot add new properties or delete existing properties on a sealed object but you can modifiy in the object as shown above the name is updated as compare to above data";
-  
+
+       //modification
+          seal.name = seal2.name;
+          seal.age = seal2.age;
+          seal.occupation = seal2.occupation;
+          seal.country = seal2.country;
+
+
+        // Render the updated object with modified values
+         renderSealList(seal);
+
+        errorMessage.textContent = `You can modify the Seal() object, but can not delete or add new property.. `
         
         const description = document.getElementsByClassName('description')[3];
         description.textContent = "Object.seal() allows modifications of existing properties but prevents the addition of new properties and the deletion of existing ones.";
@@ -275,21 +418,53 @@
         document.getElementById('sealList').innerHTML = "";
         document.getElementsByClassName('description')[3].textContent = "";
         document.getElementsByClassName('error-message')[1].textContent = "";
+
+       document.getElementById("name-seal-1").value = "";
+       document.getElementById("age-seal-1").value = "";
+       document.getElementById("occupation-seal-1").value = "";
+       document.getElementById("country-seal-1").value = "";
+
+
+      document.getElementById("name-seal").value = "";
+       document.getElementById("age-seal").value = "";
+       document.getElementById("occupation-seal").value = "";
+      document.getElementById("country-seal").value = "";
+      
+      
       }
 
       // Object.defineProperty
 
-      const object = {
-        name: "Tehreem",
-        age: 25,
-        occupation: "Engineer",
-        country: "USA"
-      };
+      function properties(){
+        const name = document.getElementById("name-set").value;
+        const age = document.getElementById("age-set").value;
+        const occupation = document.getElementById("occupation-set").value;
+        const country = document.getElementById("country-set").value;
+      
+        return{
+          name:name,
+          age:age,
+          occupation:occupation,
+          country:country
+      
+        };
+      }
+
+     function setProperty(){
+      const keySetter =document.getElementById("SetKey").value;
+      const valueSetter=document.getElementById("SetValue").value;
+      return { keySetter, valueSetter };
+     }
 
       function createDefineProperty(){
+        const propertiesobj =properties();
+        const  { keySetter, valueSetter } = setProperty();
 
-        const create = Object.defineProperty(object, "religion",{
-        value : 'Islam',
+
+        if(keySetter && valueSetter){
+
+        Object.defineProperty(propertiesobj, keySetter,{
+        value : valueSetter,
         writable: true,        // Can modify the value later
         enumerable: true,      // Will appear in loops like for...in
         configurable: true     // Can delete or reconfigure the property
@@ -299,16 +474,22 @@
         const defineList = document.getElementById('defineList');
         defineList.innerHTML="";
 
-        for(let key in object){
+        for(let key in propertiesobj){
           const defineItem = document.createElement('li');
-          defineItem.textContent=`${key} : ${object[key]}`;
+          defineItem.textContent=`${key} : ${propertiesobj[key]}`;
           defineList.appendChild(defineItem);
 
         }
+     
 
         const message =document.getElementsByClassName('description')[4];
         message.innerHTML=`The Object.defineProperty() method allows you to create or modify a property on an object and gives you more control over the property's characteristics, such as whether it is writable, enumerable, or configurable. you can see the addition of islam in this data`
       }
+      else{
+        const errorMessage = document.getElementsByClassName('error-message')[2];
+        errorMessage.innerHTML=`Please provide both key and value for the new property.`
+      }
+    }
 
       function resetCreate(){
         const defineList = document.getElementById('defineList');
@@ -317,23 +498,47 @@
         const message =document.getElementsByClassName('description')[4];
         message.innerHTML="";
 
-      }
+        const errorMessage = document.getElementsByClassName('error-message')[2];
+        errorMessage.innerHTML="";
+
+        document.getElementById("name-set").value = "";  
+        document.getElementById("age-set").value = "";
+       document.getElementById("occupation-set").value = "";
+      document.getElementById("country-set").value = "";
+      document.getElementById("SetKey").value = "";
+      document.getElementById("SetValue").value = "";
+}
+
+      
 
       // definGetter method
 
-      const objectGetter = {
-        name: "Tehreem",
-        age: 25,
-        occupation: "Engineer",
-        country: "USA"
-      };
+      function getProperty(){
+        const name = document.getElementById("name-get").value;
+        const age = document.getElementById("age-get").value;
+        const occupation = document.getElementById("occupation-get").value;
+        const country = document.getElementById("country-get").value;
+      
+        return{
+          name:name,
+          age:age,
+          occupation:occupation,
+          country:country
+      
+        };
+      }
+
+      
 
       function defineGetterProperty() {
-        // Define the 'detail' getter using __defineGetter__()
-        objectGetter.__defineGetter__("detail", function() {
-          return `${this.name} is ${this.age} years old.`;
-        });
-
+        const objectGetter = getProperty();  
+   
+    Object.defineProperty(objectGetter, 'detail', {
+        get: function() {
+            return `${this.name} is ${this.age} years old and works as a ${this.occupation} in ${this.country}.`;
+        }
+        
+    });
         const defineList = document.getElementById('defineGetterList');
         defineList.innerHTML = "";
 
@@ -352,43 +557,11 @@
 
         const comment = document.getElementsByClassName('description')[5];
       comment.innerHTML ="";
+
+      document.getElementById("name-get").value = "";
+      document.getElementById("age-get").value = "";
+      document.getElementById("occupation-get").value = "";
+      document.getElementById("country-get").value = "";
       }
 
-      // defineSetter() method:
-      const objectSetter = {}
-        
-        
-
-      function showDefineSetter(){
-        objectSetter.__defineSetter__ ("name",function(value){
-         this._name=value.toUpperCase();
-       });
-
-       
-
-       objectSetter.name="Tehreem";
-
-        const setterList = document.getElementById('defineSetterList');
-        setterList.innerHTML="";
-
-        for(key in objectSetter){
-        const setterItem =document.createElement('li');
-        setterItem.textContent=`${key}: ${objectSetter[key]}`;
-        setterList.appendChild(setterItem);
-      }
-
-
-        const comments = document.getElementsByClassName('description')[6];
-        comments.innerHTML=`The __defineSetter__() method (deprecated) and the modern alternative Object.defineProperty() with a set method allow you to define a setter property on an object in JavaScript. A setter is a special method that is called when a value is assigned to a property, enabling you to control how that value is set.`
-      }
-
-      function resetSetterProperty(){
-        const setterList = document.getElementById('defineSetterList');
-        setterList.innerHTML="";
-
-        const comments = document.getElementsByClassName('description')[6];
-        comments.innerHTML="";
-
-      }
-
-     
+      
