@@ -94,8 +94,8 @@ body {
     width: 70%;
   }
 }
-@media(max-width:455px){
+@media(max-width:460px){
   h1{
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 }
