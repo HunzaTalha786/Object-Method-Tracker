@@ -94,3 +94,8 @@ body {
     width: 70%;
   }
 }
+@media(max-width:455px){
+  h1{
+    font-size: 1.7rem;
+  }
+}
